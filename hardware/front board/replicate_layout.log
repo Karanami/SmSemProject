@@ -1,0 +1,155 @@
+01-06 14:50:12 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 392:Plugin executed on: 'win32'
+01-06 14:50:12 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 393:Plugin executed with python version: '3.9.16 (main, Aug  8 2023, 05:38:28) [MSC v.1936 64 bit (AMD64)]'
+01-06 14:50:12 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 394:KiCad build version: 7.0.8
+01-06 14:50:12 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 395:Plugin version: 2.1.3
+01-06 14:50:12 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 396:Frame repr: <wx._core.Frame object at 0x000002B9AEFB7A60>
+01-06 14:50:12 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 420:Preparing replicator with R2 as a reference
+01-06 14:50:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 117:getting a list of all footprints on board
+01-06 14:50:12 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 468:source anchor footprint is 'R2'
+Located on: ['Sensor0']
+With filenames: ['Sensor.kicad_sch']
+With sheet_id:['Sensor0']
+01-06 14:50:12 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 475:Corresponding footprints are 
+[('R26', ['Sensor15']), ('R12', ['Sensor4']), ('R4', ['Sensor1']), ('R14', ['Sensor5']), ('R28', ['Sensor12']), ('R8', ['Sensor3']), ('R22', ['Sensor9']), ('R6', ['Sensor2']), ('R10', ['Sensor7']), ('R2', ['Sensor0']), ('R18', ['Sensor11']), ('R30', ['Sensor13']), ('R32', ['Sensor14']), ('R16', ['Sensor6']), ('R20', ['Sensor8']), ('R24', ['Sensor10'])]
+01-06 14:50:12 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 487:Showing dialog
+01-06 14:50:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 424:constructing a list of sheets suitable for replication on level:'Sensor0', file:'Sensor.kicad_sch'
+01-06 14:50:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 461:suitable sheets are:[['Sensor1'], ['Sensor10'], ['Sensor11'], ['Sensor12'], ['Sensor13'], ['Sensor14'], ['Sensor15'], ['Sensor2'], ['Sensor3'], ['Sensor4'], ['Sensor5'], ['Sensor6'], ['Sensor7'], ['Sensor8'], ['Sensor9']]
+01-06 14:50:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1464:Level selected: ['Sensor0']
+01-06 14:50:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1299:Filtering list of tracks
+01-06 14:50:12 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 493:Toolbar position: wx.Point(1878, 96)
+01-06 14:50:12 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 498:Dialog position: wx.Point(1439, 96)
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 424:constructing a list of sheets suitable for replication on level:'Sensor0', file:'Sensor.kicad_sch'
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 461:suitable sheets are:[['Sensor1'], ['Sensor10'], ['Sensor11'], ['Sensor12'], ['Sensor13'], ['Sensor14'], ['Sensor15'], ['Sensor2'], ['Sensor3'], ['Sensor4'], ['Sensor5'], ['Sensor6'], ['Sensor7'], ['Sensor8'], ['Sensor9']]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 240:Replicating layout
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 240:Starting replication of sheets: [['Sensor1'], ['Sensor10'], ['Sensor11'], ['Sensor12'], ['Sensor13'], ['Sensor14'], ['Sensor15'], ['Sensor2'], ['Sensor3'], ['Sensor4'], ['Sensor5'], ['Sensor6'], ['Sensor7'], ['Sensor8'], ['Sensor9']]
+on level: ['Sensor0']
+with tracks=True, zone=True, text=True, text=True, intersecting=False, remove=False, locked footprints=False, group_only=False
+01-06 14:50:28 root 332:updating GUI message: 'Preparing for replication'
+01-06 14:50:28 root 337:updating GUI with: 0
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 310:Getting the list of source footprints
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 320:Getting the list of all the remaining footprints
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 327:Getting source tracks
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1299:Filtering list of tracks
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 331:Getting source zones
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 335:Getting source text items
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 339:Getting source drawing items
+01-06 14:50:28 root 332:updating GUI message: 'Replicating footprints'
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 806:Replicating footprints
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 813:Replicating footprints on sheet ['Sensor1']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 813:Replicating footprints on sheet ['Sensor10']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 813:Replicating footprints on sheet ['Sensor11']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 813:Replicating footprints on sheet ['Sensor12']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 813:Replicating footprints on sheet ['Sensor13']
+01-06 14:50:28 root 337:updating GUI with: 33
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 813:Replicating footprints on sheet ['Sensor14']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 813:Replicating footprints on sheet ['Sensor15']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 813:Replicating footprints on sheet ['Sensor2']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 813:Replicating footprints on sheet ['Sensor3']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 813:Replicating footprints on sheet ['Sensor4']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 813:Replicating footprints on sheet ['Sensor5']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 813:Replicating footprints on sheet ['Sensor6']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 813:Replicating footprints on sheet ['Sensor7']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 813:Replicating footprints on sheet ['Sensor8']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 813:Replicating footprints on sheet ['Sensor9']
+01-06 14:50:28 root 332:updating GUI message: 'Replicating tracks'
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 977:Replicating tracks
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 983:Replicating tracks on sheet ['Sensor1']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor1'] :[('/Sensor0/A', '/Sensor1/A'), ('/OUT0', '/OUT1'), ('GND', 'GND'), ('+3.3V', '+3.3V')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 983:Replicating tracks on sheet ['Sensor10']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor10'] :[('/OUT0', '/OUT10'), ('+3.3V', '+3.3V'), ('/Sensor0/A', '/Sensor10/A'), ('GND', 'GND')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 983:Replicating tracks on sheet ['Sensor11']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor11'] :[('GND', 'GND'), ('+3.3V', '+3.3V'), ('/Sensor0/A', '/Sensor11/A'), ('/OUT0', '/OUT11')]
+01-06 14:50:28 root 337:updating GUI with: 14
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 983:Replicating tracks on sheet ['Sensor12']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor12'] :[('/Sensor0/A', '/Sensor12/A'), ('+3.3V', '+3.3V'), ('/OUT0', '/OUT12'), ('GND', 'GND')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 983:Replicating tracks on sheet ['Sensor13']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor13'] :[('/Sensor0/A', '/Sensor13/A'), ('+3.3V', '+3.3V'), ('/OUT0', '/OUT13'), ('GND', 'GND')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 983:Replicating tracks on sheet ['Sensor14']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor14'] :[('/Sensor0/A', '/Sensor14/A'), ('+3.3V', '+3.3V'), ('/OUT0', '/OUT14'), ('GND', 'GND')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 983:Replicating tracks on sheet ['Sensor15']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor15'] :[('GND', 'GND'), ('/Sensor0/A', '/Sensor15/A'), ('+3.3V', '+3.3V'), ('/OUT0', '/OUT15')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 983:Replicating tracks on sheet ['Sensor2']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor2'] :[('/Sensor0/A', '/Sensor2/A'), ('+3.3V', '+3.3V'), ('GND', 'GND'), ('/OUT0', '/OUT2')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 983:Replicating tracks on sheet ['Sensor3']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor3'] :[('+3.3V', '+3.3V'), ('/OUT0', '/OUT3'), ('/Sensor0/A', '/Sensor3/A'), ('GND', 'GND')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 983:Replicating tracks on sheet ['Sensor4']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor4'] :[('GND', 'GND'), ('/OUT0', '/OUT4'), ('/Sensor0/A', '/Sensor4/A'), ('+3.3V', '+3.3V')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 983:Replicating tracks on sheet ['Sensor5']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor5'] :[('/OUT0', '/OUT5'), ('/Sensor0/A', '/Sensor5/A'), ('+3.3V', '+3.3V'), ('GND', 'GND')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 983:Replicating tracks on sheet ['Sensor6']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor6'] :[('/Sensor0/A', '/Sensor6/A'), ('+3.3V', '+3.3V'), ('/OUT0', '/OUT6'), ('GND', 'GND')]
+01-06 14:50:28 root 337:updating GUI with: 74
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 983:Replicating tracks on sheet ['Sensor7']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor7'] :[('GND', 'GND'), ('+3.3V', '+3.3V'), ('/OUT0', '/OUT7'), ('/Sensor0/A', '/Sensor7/A')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 983:Replicating tracks on sheet ['Sensor8']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor8'] :[('+3.3V', '+3.3V'), ('/Sensor0/A', '/Sensor8/A'), ('/OUT0', '/OUT8'), ('GND', 'GND')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 983:Replicating tracks on sheet ['Sensor9']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor9'] :[('GND', 'GND'), ('+3.3V', '+3.3V'), ('/Sensor0/A', '/Sensor9/A'), ('/OUT0', '/OUT9')]
+01-06 14:50:28 root 332:updating GUI message: 'Replicating zones'
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1047:Replicating zones
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1054:Replicating zones on sheet ['Sensor1']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor1'] :[('/Sensor0/A', '/Sensor1/A'), ('/OUT0', '/OUT1'), ('GND', 'GND'), ('+3.3V', '+3.3V')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1054:Replicating zones on sheet ['Sensor10']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor10'] :[('/OUT0', '/OUT10'), ('+3.3V', '+3.3V'), ('/Sensor0/A', '/Sensor10/A'), ('GND', 'GND')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1054:Replicating zones on sheet ['Sensor11']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor11'] :[('GND', 'GND'), ('+3.3V', '+3.3V'), ('/Sensor0/A', '/Sensor11/A'), ('/OUT0', '/OUT11')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1054:Replicating zones on sheet ['Sensor12']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor12'] :[('/Sensor0/A', '/Sensor12/A'), ('+3.3V', '+3.3V'), ('/OUT0', '/OUT12'), ('GND', 'GND')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1054:Replicating zones on sheet ['Sensor13']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor13'] :[('/Sensor0/A', '/Sensor13/A'), ('+3.3V', '+3.3V'), ('/OUT0', '/OUT13'), ('GND', 'GND')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1054:Replicating zones on sheet ['Sensor14']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor14'] :[('/Sensor0/A', '/Sensor14/A'), ('+3.3V', '+3.3V'), ('/OUT0', '/OUT14'), ('GND', 'GND')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1054:Replicating zones on sheet ['Sensor15']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor15'] :[('GND', 'GND'), ('/Sensor0/A', '/Sensor15/A'), ('+3.3V', '+3.3V'), ('/OUT0', '/OUT15')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1054:Replicating zones on sheet ['Sensor2']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor2'] :[('/Sensor0/A', '/Sensor2/A'), ('+3.3V', '+3.3V'), ('GND', 'GND'), ('/OUT0', '/OUT2')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1054:Replicating zones on sheet ['Sensor3']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor3'] :[('+3.3V', '+3.3V'), ('/OUT0', '/OUT3'), ('/Sensor0/A', '/Sensor3/A'), ('GND', 'GND')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1054:Replicating zones on sheet ['Sensor4']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor4'] :[('GND', 'GND'), ('/OUT0', '/OUT4'), ('/Sensor0/A', '/Sensor4/A'), ('+3.3V', '+3.3V')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1054:Replicating zones on sheet ['Sensor5']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor5'] :[('/OUT0', '/OUT5'), ('/Sensor0/A', '/Sensor5/A'), ('+3.3V', '+3.3V'), ('GND', 'GND')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1054:Replicating zones on sheet ['Sensor6']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor6'] :[('/Sensor0/A', '/Sensor6/A'), ('+3.3V', '+3.3V'), ('/OUT0', '/OUT6'), ('GND', 'GND')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1054:Replicating zones on sheet ['Sensor7']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor7'] :[('GND', 'GND'), ('+3.3V', '+3.3V'), ('/OUT0', '/OUT7'), ('/Sensor0/A', '/Sensor7/A')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1054:Replicating zones on sheet ['Sensor8']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor8'] :[('+3.3V', '+3.3V'), ('/Sensor0/A', '/Sensor8/A'), ('/OUT0', '/OUT8'), ('GND', 'GND')]
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1054:Replicating zones on sheet ['Sensor9']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Sensor9'] :[('GND', 'GND'), ('+3.3V', '+3.3V'), ('/Sensor0/A', '/Sensor9/A'), ('/OUT0', '/OUT9')]
+01-06 14:50:28 root 332:updating GUI message: 'Replicating text'
+01-06 14:50:28 root 337:updating GUI with: 0
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1136:Replicating text
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1143:Replicating text on sheet ['Sensor1']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1143:Replicating text on sheet ['Sensor10']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1143:Replicating text on sheet ['Sensor11']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1143:Replicating text on sheet ['Sensor12']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1143:Replicating text on sheet ['Sensor13']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1143:Replicating text on sheet ['Sensor14']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1143:Replicating text on sheet ['Sensor15']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1143:Replicating text on sheet ['Sensor2']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1143:Replicating text on sheet ['Sensor3']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1143:Replicating text on sheet ['Sensor4']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1143:Replicating text on sheet ['Sensor5']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1143:Replicating text on sheet ['Sensor6']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1143:Replicating text on sheet ['Sensor7']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1143:Replicating text on sheet ['Sensor8']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1143:Replicating text on sheet ['Sensor9']
+01-06 14:50:28 root 332:updating GUI message: 'Replicating drawings'
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1187:Replicating drawings
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1193:Replicating drawings on sheet ['Sensor1']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1193:Replicating drawings on sheet ['Sensor10']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1193:Replicating drawings on sheet ['Sensor11']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1193:Replicating drawings on sheet ['Sensor12']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1193:Replicating drawings on sheet ['Sensor13']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1193:Replicating drawings on sheet ['Sensor14']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1193:Replicating drawings on sheet ['Sensor15']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1193:Replicating drawings on sheet ['Sensor2']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1193:Replicating drawings on sheet ['Sensor3']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1193:Replicating drawings on sheet ['Sensor4']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1193:Replicating drawings on sheet ['Sensor5']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1193:Replicating drawings on sheet ['Sensor6']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1193:Replicating drawings on sheet ['Sensor7']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1193:Replicating drawings on sheet ['Sensor8']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1193:Replicating drawings on sheet ['Sensor9']
+01-06 14:50:28 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 256:Replication complete
