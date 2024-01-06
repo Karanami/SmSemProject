@@ -1,0 +1,20 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ADS7961SDBT
+D 8 Bit, 1 MSPS, 16 Ch, Single Ended, Micro Power, sr i/f, SAR ADC
+K
+F http://www.ti.com/lit/gpn/ads7961
+$ENDCMP
+#
+$CMP MAX11643EEG+
+D MAXIM INTEGRATED PRODUCTS - MAX11643EEG+ - Analogue to Digital Converter, 8 bit, 300 kSPS, Single Ended, SPI, Single, 2.7 V
+K
+F https://www.analog.com/media/en/technical-documentation/data-sheets/MAX11638-MAX11643.pdf
+$ENDCMP
+#
+$CMP VCNT2020
+D Optical Switches, Reflective, Phototransistor Output Ref Optical Sensor Transtr Output 940nm
+K
+F https://www.vishay.com/docs/84285/vcnt2020.pdf
+$ENDCMP
+#End Doc Library
