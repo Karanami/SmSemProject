@@ -47,4 +47,10 @@ D 1Gb Serial NAND Flash Memory with uniform 2KB+64B page size and set Buffer Rea
 K
 F https://www.winbond.com/hq/search-resource-file.jsp?partNo=W25N01GVZEIG&type=datasheet
 $ENDCMP
+#
+$CMP FTSH-107-01-L-DV-K-A
+D 14 position, High Reliability Header Strips, 0.050&quot; pitch, Dual-Row Vertical
+K
+F http://suddendocs.samtec.com/prints/ftsh-1xx-xx-xxx-dv-xxx-xxx-mkt.pdf
+$ENDCMP
 #End Doc Library

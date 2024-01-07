@@ -1,8 +1,14 @@
 EESchema-DOCLIB  Version 2.0
 #
-$CMP W25N01GVZEIG
-D 1Gb Serial NAND Flash Memory with uniform 2KB+64B page size and set Buffer Read Mode as default
+$CMP SN74LVC1G18DBVRG4
+D Encoders, Decoders, Multiplexers & Demultiplexers 1 of 2 Noninverting Demultiplexer
 K
-F https://www.winbond.com/hq/search-resource-file.jsp?partNo=W25N01GVZEIG&type=datasheet
+F https://www.ti.com/lit/ds/symlink/sn74lvc1g18.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1629630993895&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti
+$ENDCMP
+#
+$CMP FTSH-107-01-L-DV-K-A
+D 14 position, High Reliability Header Strips, 0.050&quot; pitch, Dual-Row Vertical
+K
+F http://suddendocs.samtec.com/prints/ftsh-1xx-xx-xxx-dv-xxx-xxx-mkt.pdf
 $ENDCMP
 #End Doc Library
