@@ -10,6 +10,7 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include Drivers/STM32WBxx_HAL_Driver/Src/subdir.mk
+-include Core/ThreadSafe/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
 -include objects.mk
@@ -60,8 +61,8 @@ all: main-build
 main-build: SmSemProject.elf secondary-outputs
 
 # Tool invocations
-SmSemProject.elf SmSemProject.map: $(OBJS) $(USER_OBJS) C:\Users\HP\Desktop\studia\sm\SmSemProject\firmware\STM32WB55RGVX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "SmSemProject.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\HP\Desktop\studia\sm\SmSemProject\firmware\STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SmSemProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+SmSemProject.elf SmSemProject.map: $(OBJS) $(USER_OBJS) C:\Users\user\Desktop\szkola\Uni\sm\SmSemProject\firmware\STM32WB55RGVX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "SmSemProject.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\user\Desktop\szkola\Uni\sm\SmSemProject\firmware\STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SmSemProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

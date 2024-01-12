@@ -24,5 +24,6 @@ C_DEPS :=
 SUBDIRS := \
 Core/Src \
 Core/Startup \
+Core/ThreadSafe \
 Drivers/STM32WBxx_HAL_Driver/Src \
 
