@@ -234,10 +234,10 @@
       (net 1 "GND") (pinfunction "MountPin") (pintype "passive") (tstamp ce5116cc-63a2-43f0-bde2-89e167762efd))
     (pad "MP" smd rect locked (at 7.3 1.79) (size 2 1.3) (layers "F.Cu" "F.Paste" "F.Mask")
       (net 1 "GND") (pinfunction "MountPin") (pintype "passive") (tstamp 5e9bdc4b-9ab7-45d7-bc94-96852da57c09))
-    (model "${KICAD6_3DMODEL_DIR}/Connector_FFC-FPC.3dshapes/Molex_200528-0100_1x10-1MP_P1.00mm_Horizontal.wrl"
+    (model "${KIPRJMOD}/footprint/Samacsys.3dshapes/200528-0100.stp"
       (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz -90 0 0))
     )
   )
 
@@ -18416,7 +18416,6 @@
       177895ad-08d2-45e7-9b5e-866244abba53
       17d91b4b-d289-488f-82c7-000a7ba53f68
       17dd4828-ac1d-402c-8a9f-013e9ae73c28
-      17e6c741-2fee-41e9-994e-b4dd7e4c09c1
       1849e305-c21f-4e72-a805-ff865accc375
       1850cb81-7df3-4615-bf6c-abc01cd87dfd
       189cf7f1-ed7c-4c4c-a57c-de9025d3ca1c
@@ -18426,8 +18425,6 @@
       1b79a277-5a5c-42c4-8b9f-ab82a5ee2a0b
       1c1ea140-b402-4d07-b44a-f3ecce3cddb8
       1cb96efc-2ebd-4791-b883-a341562c7b23
-      1d23f4dc-d2a9-46b9-94d6-982a96aacbb6
-      1df821c6-db2d-44b3-bf0d-c7a6bb11bc6f
       1ec1ddba-a2ed-49b2-aac8-2f020133b614
       1f7a6d01-a743-4097-b15f-48e044017e78
       20125bdf-a530-424a-a8a0-8f8776f8416f
@@ -18488,7 +18485,6 @@
       4335283f-df8f-42d2-a42f-1297b53f4d87
       4440898e-990c-42c5-b4b4-24e8591a31d0
       445ebd34-d0c3-472f-ad55-ccdc7484a321
-      45444fa5-2446-416a-90ef-01f6bd005ae6
       455f8f14-d506-474b-879b-ead89b28194b
       4575749d-b6ba-46e1-8472-09cff0ac0f76
       45c834bf-1a9f-4fd3-ba85-2789f9f9d78c
@@ -18680,7 +18676,6 @@
       aaff7164-c02e-4a2e-bcd7-cf29e9c8d107
       ad2e21e7-d93a-479c-b129-5a7ad5becf29
       ad50b1d6-1ac1-45cc-bf77-6cf969a13cfc
-      adb96b58-a545-47ae-83f3-878f0bce859b
       ae4c11c9-eef9-4f21-888d-e9e1b2baa50c
       aea0eec1-6bee-4b5c-aa0a-78f54e9d7c8a
       aeabd08e-758e-40c9-86aa-bdfb06fb6035
@@ -18763,7 +18758,6 @@
       de649917-6da1-4e1a-8ca6-fa5075ddb969
       ded7e0aa-da54-4b60-a8f8-a90907eb89fa
       e01648dc-9815-4584-9525-403a3db79de9
-      e0774e6c-5451-4563-bc1e-42eb165eaf7b
       e133a7fa-0df8-465a-bb94-2b1b2d6e0efd
       e159e56d-9a40-40b8-b66f-3a7066f48e6b
       e2bd0a65-c036-45e1-b878-b71e541b5c1c

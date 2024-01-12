@@ -462,7 +462,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "SmSemProject.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""

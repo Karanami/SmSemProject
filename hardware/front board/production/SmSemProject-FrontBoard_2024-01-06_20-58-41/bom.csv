@@ -1,9 +1,0 @@
-﻿Designator,Footprint,Quantity,Value,LCSC Part #
-"C1, C2",0603,2,100nF,
-"H1, H2, H3, H4",MountingHole_3.2mm_M3_Pad_Via,4,MountingHole_Pad,
-"IC1, IC10, IC11, IC12, IC13, IC14, IC15, IC16, IC17, IC3, IC4, IC5, IC6, IC7, IC8, IC9",VCNT2020,16,VCNT2020,
-IC2,SOP64P602X175-24N,1,MAX11643EEG+,
-J2,Molex_200528-0100_1x10-1MP_P1.00mm_Horizontal,1,Conn_01x10_MountingPin,
-"R1, R11, R13, R15, R17, R19, R21, R23, R25, R27, R29, R3, R31, R5, R7, R9",0603,16,1k,
-"R10, R12, R14, R16, R18, R2, R20, R22, R24, R26, R28, R30, R32, R4, R6, R8",0603,16,100,
-"R33, R34",R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal,2,--,
