@@ -179,7 +179,7 @@ extern void MX_QUADSPI_Init(void);
 /* USER CODE END PD */
 
 /* USER CODE BEGIN CUSTOM_QSPI */
-#error "[This error is thrown on purpose] : define the command codes and flags below related to the NOR Flash memory used"
+//#error "[This error is thrown on purpose] : define the command codes and flags below related to the NOR Flash memory used"
 #define LX_STM32_QSPI_SECTOR_SIZE                     0xFF
 #define LX_STM32_QSPI_FLASH_SIZE                      0xFF
 #define LX_STM32_QSPI_STATUS_REG_READY                0xFF

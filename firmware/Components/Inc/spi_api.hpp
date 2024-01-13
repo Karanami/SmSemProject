@@ -15,14 +15,14 @@
 
 struct SpiDmaRequest
 {
-	explicit SpiDmaRequest(uint8_t *rx_data, uint8_t *tx_data, size_t size, GpioOut const *cs, std::atomic<bool> *pending_request);
+	explicit SpiDmaRequest(uint8_t *rx_data, uint8_t *tx_data, size_t size, GpioOut *cs, std::atomic<bool> *pending_request);
 
 	void send();
 
 	uint8_t *rx_data;
 	uint8_t *tx_data;
 	size_t size;
-	GpioOut const *cs;
+	GpioOut *cs;
 	std::atomic<bool> *pending_request;
 };
 

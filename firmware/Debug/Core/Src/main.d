@@ -1,4 +1,7 @@
-Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
+Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/app_threadx.h \
+ ../Middlewares/ST/threadx/common/inc/tx_api.h \
+ ../Middlewares/ST/threadx/ports/cortex_m4/gnu/inc/tx_port.h \
+ ../Core/Inc/tx_user.h ../Core/Inc/main.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h \
  ../Core/Inc/stm32wbxx_hal_conf.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h \
@@ -45,6 +48,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart_ex.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_system.h \
+ ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_tim.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_system.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_gpio.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h \
@@ -54,9 +58,14 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_utils.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_dma.h ../Core/Inc/adc.h \
- ../Core/Inc/main.h ../Core/Inc/lptim.h ../Core/Inc/usart.h \
- ../Core/Inc/memorymap.h ../Core/Inc/quadspi.h ../Core/Inc/rf.h \
- ../Core/Inc/spi.h ../Core/Inc/tim.h ../Core/Inc/usb.h ../Core/Inc/gpio.h
+ ../Core/Inc/main.h ../Core/Inc/dma.h ../Core/Inc/lptim.h \
+ ../Core/Inc/usart.h ../Core/Inc/memorymap.h ../Core/Inc/quadspi.h \
+ ../Core/Inc/rf.h ../Core/Inc/spi.h ../Core/Inc/tim.h ../Core/Inc/usb.h \
+ ../Core/Inc/gpio.h ../Components/Inc/common.hpp
+../Core/Inc/app_threadx.h:
+../Middlewares/ST/threadx/common/inc/tx_api.h:
+../Middlewares/ST/threadx/ports/cortex_m4/gnu/inc/tx_port.h:
+../Core/Inc/tx_user.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:
 ../Core/Inc/stm32wbxx_hal_conf.h:
@@ -104,6 +113,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart.h:
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart_ex.h:
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_system.h:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_tim.h:
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_system.h:
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_gpio.h:
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h:
@@ -115,6 +125,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_dma.h:
 ../Core/Inc/adc.h:
 ../Core/Inc/main.h:
+../Core/Inc/dma.h:
 ../Core/Inc/lptim.h:
 ../Core/Inc/usart.h:
 ../Core/Inc/memorymap.h:
@@ -124,3 +135,4 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/tim.h:
 ../Core/Inc/usb.h:
 ../Core/Inc/gpio.h:
+../Components/Inc/common.hpp:

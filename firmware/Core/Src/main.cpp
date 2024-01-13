@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2023 STMicroelectronics.
+  * Copyright (c) 2024 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -20,6 +20,7 @@
 #include "app_threadx.h"
 #include "main.h"
 #include "adc.h"
+#include "dma.h"
 #include "lptim.h"
 #include "usart.h"
 #include "memorymap.h"
@@ -57,7 +58,6 @@ GpioOut LED1 { LED1_GPIO_Port, LED1_Pin, true };
 GpioOut LED2 { LED2_GPIO_Port, LED2_Pin, true };
 GpioOut LED3 { LED3_GPIO_Port, LED3_Pin, true };
 GpioOut LED4 { LED4_GPIO_Port, LED4_Pin, true };
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -103,13 +103,14 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_SPI1_Init();
+  MX_DMA_Init();
   MX_TIM1_Init();
   MX_USB_PCD_Init();
   MX_LPTIM1_Init();
   MX_ADC1_Init();
   MX_LPTIM2_Init();
   MX_QUADSPI_Init();
+  MX_SPI1_Init();
   MX_LPUART1_UART_Init();
   MX_RF_Init();
   /* USER CODE BEGIN 2 */

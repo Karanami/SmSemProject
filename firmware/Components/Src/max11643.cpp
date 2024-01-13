@@ -8,7 +8,7 @@
 
 #include <max11643.hpp>
 
-Max11643::Max11643(SPI_HandleTypedef *hspi, GpioOut *cs, GpioIn *it) : hspi(hspi), cs(cs), it(it), data({ 0 }), pending_req(false) { };
+Max11643::Max11643(SPI_HandleTypeDef *hspi, GpioOut *cs, GpioIn *it) : hspi(hspi), cs(cs), it(it), data({ 0 }), pending_req(false) { };
 
 void Max11643::requestData()
 {

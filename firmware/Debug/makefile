@@ -9,21 +9,66 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include USBX/App/subdir.mk
+-include NetXDuo/Target/subdir.mk
+-include NetXDuo/App/subdir.mk
+-include Middlewares/ST/usbx/common/usbx_stm32_device_controllers/subdir.mk
+-include Middlewares/ST/usbx/common/usbx_network/src/subdir.mk
+-include Middlewares/ST/usbx/common/usbx_device_classes/src/subdir.mk
+-include Middlewares/ST/usbx/common/core/src/subdir.mk
+-include Middlewares/ST/threadx/utility/low_power/subdir.mk
+-include Middlewares/ST/threadx/ports/cortex_m4/gnu/src/subdir.mk
+-include Middlewares/ST/threadx/common/src/subdir.mk
+-include Middlewares/ST/netxduo/crypto_libraries/src/subdir.mk
+-include Middlewares/ST/netxduo/common/src/subdir.mk
+-include Middlewares/ST/levelx/common/src/subdir.mk
+-include Middlewares/ST/levelx/common/drivers/subdir.mk
+-include Middlewares/ST/filex/common/src/subdir.mk
+-include Middlewares/ST/filex/common/drivers/subdir.mk
+-include LevelX/Target/subdir.mk
+-include FileX/Target/subdir.mk
+-include FileX/App/subdir.mk
 -include Drivers/STM32WBxx_HAL_Driver/Src/subdir.mk
 -include Core/ThreadSafe/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
+-include Components/Src/subdir.mk
+-include AZURE_RTOS/App/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
+ifneq ($(strip $(CC_DEPS)),)
+-include $(CC_DEPS)
+endif
+ifneq ($(strip $(C++_DEPS)),)
+-include $(C++_DEPS)
+endif
+ifneq ($(strip $(CCM_DEPS)),)
+-include $(CCM_DEPS)
+endif
+ifneq ($(strip $(C_UPPER_DEPS)),)
+-include $(C_UPPER_DEPS)
+endif
+ifneq ($(strip $(CXX_DEPS)),)
+-include $(CXX_DEPS)
+endif
 ifneq ($(strip $(S_DEPS)),)
 -include $(S_DEPS)
 endif
 ifneq ($(strip $(S_UPPER_DEPS)),)
 -include $(S_UPPER_DEPS)
 endif
+ifneq ($(strip $(CXXM_DEPS)),)
+-include $(CXXM_DEPS)
+endif
+ifneq ($(strip $(C++M_DEPS)),)
+-include $(C++M_DEPS)
+endif
 ifneq ($(strip $(C_DEPS)),)
 -include $(C_DEPS)
+endif
+ifneq ($(strip $(CPP_DEPS)),)
+-include $(CPP_DEPS)
 endif
 endif
 
@@ -61,8 +106,8 @@ all: main-build
 main-build: SmSemProject.elf secondary-outputs
 
 # Tool invocations
-SmSemProject.elf SmSemProject.map: $(OBJS) $(USER_OBJS) C:\Users\user\Desktop\szkola\Uni\sm\SmSemProject\firmware\STM32WB55RGVX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "SmSemProject.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\user\Desktop\szkola\Uni\sm\SmSemProject\firmware\STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SmSemProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+SmSemProject.elf SmSemProject.map: $(OBJS) $(USER_OBJS) C:\Users\HP\Desktop\studia\sm\SmSemProject\firmware\STM32WB55RGVX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "SmSemProject.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\HP\Desktop\studia\sm\SmSemProject\firmware\STM32WB55RGVX_FLASH.ld" -Wl,-Map="SmSemProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

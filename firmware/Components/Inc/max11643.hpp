@@ -18,14 +18,14 @@
 class Max11643
 {
 	public:
-		Max11643(SPI_HandleTypedef *hspi, GpioOut *cs, GpioIn *it);
+		Max11643(SPI_HandleTypeDef *hspi, GpioOut *cs, GpioIn *it);
 
 		void requestData();
 		bool canRequest();
 		uint8_t getChannelAdc(uint32_t channel);
 
 	private:
-		SPI_HandleTypedef *spi;
+		SPI_HandleTypeDef *hspi;
 		GpioOut *cs;
 		GpioIn *it;
 

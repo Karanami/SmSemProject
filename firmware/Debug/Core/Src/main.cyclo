@@ -1,5 +1,7 @@
-../Core/Src/main.c:74:5:main	1
-../Core/Src/main.c:128:6:SystemClock_Config	3
-../Core/Src/main.c:178:6:PeriphCommonClock_Config	2
-../Core/Src/main.c:218:6:HAL_TIM_PeriodElapsedCallback	2
-../Core/Src/main.c:235:6:Error_Handler	1
+../Core/Src/main.cpp:79:5:int main()	1
+../Core/Src/main.cpp:138:6:void SystemClock_Config()	3
+../Core/Src/main.cpp:188:6:void PeriphCommonClock_Config()	2
+../Core/Src/main.cpp:228:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	2
+../Core/Src/main.cpp:245:6:void Error_Handler()	1
+../Core/Src/main.cpp:254:1:void __static_initialization_and_destruction_0(int, int)	3
+../Core/Src/main.cpp:254:1:cpp)	1

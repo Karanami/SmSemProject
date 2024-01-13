@@ -21,13 +21,13 @@
 struct GpioIn
 {
 	public:
-		GpioIn(const GPIO_Typedef *gpio, uint16_t pin);
-		GpioIn(const GPIO_Typedef *gpio, uint16_t pin, bool inv);
+		GpioIn(GPIO_TypeDef *gpio, uint16_t pin);
+		GpioIn(GPIO_TypeDef *gpio, uint16_t pin, bool inv);
 
 		bool read();
 
 	private:
-		GPIO_Typedef *gpio;
+		GPIO_TypeDef *gpio;
 		uint16_t pin;
 		uint16_t inv;
 };
@@ -40,15 +40,15 @@ struct GpioIn
 struct GpioOut
 {
 	public:
-		GpioOut(const GPIO_Typedef *gpio, uint16_t pin);
-		GpioOut(const GPIO_Typedef *gpio, uint16_t pin, bool inv);
+		GpioOut(GPIO_TypeDef *gpio, uint16_t pin);
+		GpioOut(GPIO_TypeDef *gpio, uint16_t pin, bool inv);
 
 		void on();
 		void off();
 		void toggle();
 
 	private:
-		GPIO_Typedef *gpio;
+		GPIO_TypeDef *gpio;
 		uint16_t pin;
 		uint16_t inv;
 };
@@ -70,13 +70,13 @@ struct GpioOut
 struct Encoder
 {
 	public:
-		Encoder(const LPTIM_Typedef *lptim, float ratio);
-		Encoder(const LPTIM_Typedef *lptim, float gear_ratio, float encoder_ratio);
+		Encoder(LPTIM_TypeDef *lptim, float ratio);
+		Encoder(LPTIM_TypeDef *lptim, float gear_ratio, float encoder_ratio);
 
 		float getAngleSpeed();
 
 	private:
-		const LPTIM_Typedef *lptim;
+		LPTIM_TypeDef *lptim;
 		float ratio;
 };
 
@@ -98,12 +98,12 @@ enum struct PwmOutCh : uint32_t
 struct PwmOut
 {
 	public:
-		PwmOut(const TIM_Typedef *tim, PwmOutCh channel);
+		PwmOut(TIM_TypeDef *tim, PwmOutCh channel);
 
 		void setDuty(float duty);
 	private:
-		const TIM_Typedef *tim;
-		uint32_t TIM_Typedef::*channel_cmp_reg;
+		TIM_TypeDef *tim;
+		__IO uint32_t TIM_TypeDef::*channel_cmp_reg;
 };
 
 #endif /* INC_COMMON_HPP_ */
