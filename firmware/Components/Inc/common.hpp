@@ -10,6 +10,8 @@
 
 #include "main.h"
 #include "gpio.h"
+#include "lptim.h"
+#include "tim.h"
 
 //	┏┓  •  ┳
 //	┃┓┏┓┓┏┓┃┏┓
@@ -18,14 +20,16 @@
 
 struct GpioIn
 {
-	GpioIn(GPIO_Typedef *gpio, uint16_t pin);
-	GpioIn(GPIO_Typedef *gpio, uint16_t pin, bool inv);
+	public:
+		GpioIn(const GPIO_Typedef *gpio, uint16_t pin);
+		GpioIn(const GPIO_Typedef *gpio, uint16_t pin, bool inv);
 
-	bool read();
+		bool read();
 
-	GPIO_Typedef *gpio;
-	uint16_t pin;
-	uint16_t inv;
+	private:
+		GPIO_Typedef *gpio;
+		uint16_t pin;
+		uint16_t inv;
 };
 
 //	┏┓  •  ┏┓
@@ -35,19 +39,71 @@ struct GpioIn
 
 struct GpioOut
 {
-	GpioOut(GPIO_Typedef *gpio, uint16_t pin);
-	GpioOut(GPIO_Typedef *gpio, uint16_t pin, bool inv);
+	public:
+		GpioOut(const GPIO_Typedef *gpio, uint16_t pin);
+		GpioOut(const GPIO_Typedef *gpio, uint16_t pin, bool inv);
 
-	void on();
-	void off();
-	void toggle();
+		void on();
+		void off();
+		void toggle();
 
-	GPIO_Typedef *gpio;
-	uint16_t pin;
-	uint16_t inv;
+	private:
+		GPIO_Typedef *gpio;
+		uint16_t pin;
+		uint16_t inv;
 };
+
+
+//	┏┓  •  ┳┳┓•
+//	┃┓┏┓┓┏┓┃┃┃┓┏┏
+//	┗┛┣┛┗┗┛┛ ┗┗┛┗
+//	  ┛
 
 #define PORT(LABEL) LABEL##_GPIO_Port
 #define PIN(LABEL) LABEL##Pin
+
+//	┏┓      ┓
+//	┣ ┏┓┏┏┓┏┫┏┓┏┓
+//	┗┛┛┗┗┗┛┗┻┗ ┛
+//
+
+struct Encoder
+{
+	public:
+		Encoder(const LPTIM_Typedef *lptim, float ratio);
+		Encoder(const LPTIM_Typedef *lptim, float gear_ratio, float encoder_ratio);
+
+		float getAngleSpeed();
+
+	private:
+		const LPTIM_Typedef *lptim;
+		float ratio;
+};
+
+//	┏┓      ┏┓
+//	┃┃┓┏┏┏┳┓┃┃┓┏╋
+//	┣┛┗┻┛┛┗┗┗┛┗┻┗
+//
+
+enum struct PwmOutCh : uint32_t
+{
+	_1,
+	_2,
+	_3,
+	_4,
+	_5,
+	_6
+};
+
+struct PwmOut
+{
+	public:
+		PwmOut(const TIM_Typedef *tim, PwmOutCh channel);
+
+		void setDuty(float duty);
+	private:
+		const TIM_Typedef *tim;
+		uint32_t TIM_Typedef::*channel_cmp_reg;
+};
 
 #endif /* INC_COMMON_HPP_ */

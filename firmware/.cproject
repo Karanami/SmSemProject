@@ -23,7 +23,7 @@
 							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.fpu.1082121340" name="Floating-point unit" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.fpu" useByScannerDiscovery="true" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.fpu.value.fpv4-sp-d16" valueType="enumerated"/>
 							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.floatabi.796052521" name="Floating-point ABI" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.floatabi" useByScannerDiscovery="true" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.floatabi.value.hard" valueType="enumerated"/>
 							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_board.165403393" name="Board" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_board" useByScannerDiscovery="false" value="genericBoard" valueType="string"/>
-							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.defaults.311760350" name="Defaults" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.defaults" useByScannerDiscovery="false" value="com.st.stm32cube.ide.common.services.build.inputs.revA.1.0.6 || Debug || true || Executable || com.st.stm32cube.ide.mcu.gnu.managedbuild.option.toolchain.value.workspace || STM32WB55RGVx || 0 || 0 || arm-none-eabi- || ${gnu_tools_for_stm32_compiler_path} || ../Core/Inc | ../Drivers/STM32WBxx_HAL_Driver/Inc | ../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy | ../Drivers/CMSIS/Device/ST/STM32WBxx/Include | ../Drivers/CMSIS/Include | ../Core/ThreadSafe | ../Middlewares/ST/threadx/common/inc/ | ../Middlewares/ST/threadx/ports/cortex_m4/gnu/inc/ | ../Middlewares/ST/netxduo/common/inc/ | ../Middlewares/ST/usbx/common/core/inc/ | ../Middlewares/ST/filex/common/inc/ | ../Middlewares/ST/threadx/utility/low_power/ ||  ||  || USE_HAL_DRIVER | STM32WB55xx | STM32_THREAD_SAFE_STRATEGY=2 | USE_FULL_LL_DRIVER ||  || Core/ThreadSafe | Drivers | ThreadX | Core/Startup | Core ||  ||  || ${workspace_loc:/${ProjName}/STM32WB55RGVX_FLASH.ld} || true || NonSecure ||  || secure_nsclib.o ||  || Generic_AllowLockFromIRQ ||  ||  || " valueType="string"/>
+							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.defaults.311760350" name="Defaults" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.defaults" useByScannerDiscovery="false" value="com.st.stm32cube.ide.common.services.build.inputs.revA.1.0.6 || Debug || true || Executable || com.st.stm32cube.ide.mcu.gnu.managedbuild.option.toolchain.value.workspace || STM32WB55RGVx || 0 || 0 || arm-none-eabi- || ${gnu_tools_for_stm32_compiler_path} || ../Core/Inc | ../Drivers/STM32WBxx_HAL_Driver/Inc | ../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy | ../Drivers/CMSIS/Device/ST/STM32WBxx/Include | ../Drivers/CMSIS/Include | ../Core/ThreadSafe | ../Middlewares/ST/threadx/common/inc/ | ../Middlewares/ST/threadx/ports/cortex_m4/gnu/inc/ | ../Middlewares/ST/netxduo/common/inc/ | ../Middlewares/ST/usbx/common/core/inc/ | ../Middlewares/ST/filex/common/inc/ | ../Middlewares/ST/threadx/utility/low_power/ | ../AZURE_RTOS/App | ../FileX/App | ../LevelX/App | ../FileX/Target | ../LevelX/Target | ../USBX/App | ../USBX/Target | ../Middlewares/ST/filex/ports/generic/inc/ | ../Middlewares/ST/usbx/common/usbx_device_classes/inc/ | ../Middlewares/ST/usbx/ports/generic/inc/ | ../Middlewares/ST/usbx/common/usbx_network/inc/ | ../Middlewares/ST/usbx/common/usbx_stm32_device_controllers/ | ../Middlewares/ST/levelx/common/inc/ ||  ||  || USE_HAL_DRIVER | STM32WB55xx | STM32_THREAD_SAFE_STRATEGY=2 | USE_FULL_LL_DRIVER | TX_INCLUDE_USER_DEFINE_FILE | FX_INCLUDE_USER_DEFINE_FILE | LX_INCLUDE_USER_DEFINE_FILE | UX_INCLUDE_USER_DEFINE_FILE ||  || AZURE_RTOS | LevelX | USBX | Core/ThreadSafe | Drivers | FileX | ThreadX | Core/Startup | Middlewares | Core ||  ||  || ${workspace_loc:/${ProjName}/STM32WB55RGVX_FLASH.ld} || true || NonSecure ||  || secure_nsclib.o ||  || Generic_AllowLockFromIRQ ||  ||  || " valueType="string"/>
 							<option id="com.st.stm32cube.ide.mcu.debug.option.cpuclock.2020916422" name="Cpu clock frequence" superClass="com.st.stm32cube.ide.mcu.debug.option.cpuclock" useByScannerDiscovery="false" value="64" valueType="string"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.targetplatform.1077829342" isAbstract="false" osList="all" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.targetplatform"/>
 							<builder buildPath="${workspace_loc:/SmSemProject}/Debug" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.builder.2025294061" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.builder"/>
@@ -43,6 +43,10 @@
 									<listOptionValue builtIn="false" value="STM32WB55xx"/>
 									<listOptionValue builtIn="false" value="STM32_THREAD_SAFE_STRATEGY=2"/>
 									<listOptionValue builtIn="false" value="USE_FULL_LL_DRIVER"/>
+									<listOptionValue builtIn="false" value="TX_INCLUDE_USER_DEFINE_FILE"/>
+									<listOptionValue builtIn="false" value="FX_INCLUDE_USER_DEFINE_FILE"/>
+									<listOptionValue builtIn="false" value="LX_INCLUDE_USER_DEFINE_FILE"/>
+									<listOptionValue builtIn="false" value="UX_INCLUDE_USER_DEFINE_FILE"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.includepaths.1027589267" name="Include paths (-I)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.includepaths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="../Core/Inc"/>
@@ -57,7 +61,21 @@
 									<listOptionValue builtIn="false" value="../Middlewares/ST/usbx/common/core/inc/"/>
 									<listOptionValue builtIn="false" value="../Middlewares/ST/filex/common/inc/"/>
 									<listOptionValue builtIn="false" value="../Middlewares/ST/threadx/utility/low_power/"/>
+									<listOptionValue builtIn="false" value="../AZURE_RTOS/App"/>
+									<listOptionValue builtIn="false" value="../FileX/App"/>
+									<listOptionValue builtIn="false" value="../LevelX/App"/>
+									<listOptionValue builtIn="false" value="../FileX/Target"/>
+									<listOptionValue builtIn="false" value="../LevelX/Target"/>
+									<listOptionValue builtIn="false" value="../USBX/App"/>
+									<listOptionValue builtIn="false" value="../USBX/Target"/>
+									<listOptionValue builtIn="false" value="../Middlewares/ST/filex/ports/generic/inc/"/>
+									<listOptionValue builtIn="false" value="../Middlewares/ST/usbx/common/usbx_device_classes/inc/"/>
+									<listOptionValue builtIn="false" value="../Middlewares/ST/usbx/ports/generic/inc/"/>
+									<listOptionValue builtIn="false" value="../Middlewares/ST/usbx/common/usbx_network/inc/"/>
+									<listOptionValue builtIn="false" value="../Middlewares/ST/usbx/common/usbx_stm32_device_controllers/"/>
+									<listOptionValue builtIn="false" value="../Middlewares/ST/levelx/common/inc/"/>
 								</option>
+								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.languagestandard.146769318" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.languagestandard" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.languagestandard.value.gnu18" valueType="enumerated"/>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.1308912044" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>
 							<tool id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.285600905" name="MCU G++ Compiler" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler">
@@ -83,9 +101,14 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="AZURE_RTOS"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="USBX"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="FileX"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Components"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="LevelX"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="ThreadX"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
 					</sourceEntries>
 				</configuration>
@@ -114,7 +137,7 @@
 							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.fpu.788440727" name="Floating-point unit" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.fpu" useByScannerDiscovery="true" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.fpu.value.fpv4-sp-d16" valueType="enumerated"/>
 							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.floatabi.130423272" name="Floating-point ABI" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.floatabi" useByScannerDiscovery="true" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.floatabi.value.hard" valueType="enumerated"/>
 							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_board.1014109428" name="Board" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_board" useByScannerDiscovery="false" value="genericBoard" valueType="string"/>
-							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.defaults.2024398520" name="Defaults" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.defaults" useByScannerDiscovery="false" value="com.st.stm32cube.ide.common.services.build.inputs.revA.1.0.6 || Release || false || Executable || com.st.stm32cube.ide.mcu.gnu.managedbuild.option.toolchain.value.workspace || STM32WB55RGVx || 0 || 0 || arm-none-eabi- || ${gnu_tools_for_stm32_compiler_path} || ../Core/Inc | ../Drivers/STM32WBxx_HAL_Driver/Inc | ../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy | ../Drivers/CMSIS/Device/ST/STM32WBxx/Include | ../Drivers/CMSIS/Include | ../Core/ThreadSafe | ../AZURE_RTOS/App | ../Middlewares/ST/threadx/common/inc/ | ../Middlewares/ST/threadx/ports/cortex_m4/gnu/inc/ | ../Middlewares/ST/netxduo/common/inc/ | ../Middlewares/ST/usbx/common/core/inc/ | ../Middlewares/ST/filex/common/inc/ | ../Middlewares/ST/threadx/utility/low_power/ ||  ||  || USE_HAL_DRIVER | STM32WB55xx | STM32_THREAD_SAFE_STRATEGY=2 | TX_INCLUDE_USER_DEFINE_FILE | USE_FULL_LL_DRIVER ||  || Core/ThreadSafe | Drivers | ThreadX | Core/Startup | Core ||  ||  || ${workspace_loc:/${ProjName}/STM32WB55RGVX_FLASH.ld} || true || NonSecure ||  || secure_nsclib.o ||  || Generic_AllowLockFromIRQ ||  ||  || " valueType="string"/>
+							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.defaults.2024398520" name="Defaults" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.defaults" useByScannerDiscovery="false" value="com.st.stm32cube.ide.common.services.build.inputs.revA.1.0.6 || Release || false || Executable || com.st.stm32cube.ide.mcu.gnu.managedbuild.option.toolchain.value.workspace || STM32WB55RGVx || 0 || 0 || arm-none-eabi- || ${gnu_tools_for_stm32_compiler_path} || ../Core/Inc | ../Drivers/STM32WBxx_HAL_Driver/Inc | ../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy | ../Drivers/CMSIS/Device/ST/STM32WBxx/Include | ../Drivers/CMSIS/Include | ../Core/ThreadSafe | ../AZURE_RTOS/App | ../Middlewares/ST/threadx/common/inc/ | ../Middlewares/ST/threadx/ports/cortex_m4/gnu/inc/ | ../Middlewares/ST/netxduo/common/inc/ | ../Middlewares/ST/usbx/common/core/inc/ | ../Middlewares/ST/filex/common/inc/ | ../Middlewares/ST/threadx/utility/low_power/ | ../FileX/App | ../LevelX/App | ../FileX/Target | ../LevelX/Target | ../USBX/App | ../USBX/Target | ../Middlewares/ST/filex/ports/generic/inc/ | ../Middlewares/ST/usbx/common/usbx_device_classes/inc/ | ../Middlewares/ST/usbx/ports/generic/inc/ | ../Middlewares/ST/usbx/common/usbx_network/inc/ | ../Middlewares/ST/usbx/common/usbx_stm32_device_controllers/ | ../Middlewares/ST/levelx/common/inc/ ||  ||  || USE_HAL_DRIVER | STM32WB55xx | STM32_THREAD_SAFE_STRATEGY=2 | TX_INCLUDE_USER_DEFINE_FILE | USE_FULL_LL_DRIVER | FX_INCLUDE_USER_DEFINE_FILE | LX_INCLUDE_USER_DEFINE_FILE | UX_INCLUDE_USER_DEFINE_FILE ||  || AZURE_RTOS | LevelX | USBX | Core/ThreadSafe | Drivers | FileX | ThreadX | Core/Startup | Middlewares | Core ||  ||  || ${workspace_loc:/${ProjName}/STM32WB55RGVX_FLASH.ld} || true || NonSecure ||  || secure_nsclib.o ||  || Generic_AllowLockFromIRQ ||  ||  || " valueType="string"/>
 							<option id="com.st.stm32cube.ide.mcu.debug.option.cpuclock.1608244958" name="Cpu clock frequence" superClass="com.st.stm32cube.ide.mcu.debug.option.cpuclock" useByScannerDiscovery="false" value="64" valueType="string"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.targetplatform.80400330" isAbstract="false" osList="all" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.targetplatform"/>
 							<builder buildPath="${workspace_loc:/SmSemProject}/Release" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.builder.385347100" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.builder"/>
@@ -131,6 +154,9 @@
 									<listOptionValue builtIn="false" value="STM32_THREAD_SAFE_STRATEGY=2"/>
 									<listOptionValue builtIn="false" value="TX_INCLUDE_USER_DEFINE_FILE"/>
 									<listOptionValue builtIn="false" value="USE_FULL_LL_DRIVER"/>
+									<listOptionValue builtIn="false" value="FX_INCLUDE_USER_DEFINE_FILE"/>
+									<listOptionValue builtIn="false" value="LX_INCLUDE_USER_DEFINE_FILE"/>
+									<listOptionValue builtIn="false" value="UX_INCLUDE_USER_DEFINE_FILE"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.includepaths.390479761" name="Include paths (-I)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.includepaths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="../Core/Inc"/>
@@ -146,6 +172,18 @@
 									<listOptionValue builtIn="false" value="../Middlewares/ST/usbx/common/core/inc/"/>
 									<listOptionValue builtIn="false" value="../Middlewares/ST/filex/common/inc/"/>
 									<listOptionValue builtIn="false" value="../Middlewares/ST/threadx/utility/low_power/"/>
+									<listOptionValue builtIn="false" value="../FileX/App"/>
+									<listOptionValue builtIn="false" value="../LevelX/App"/>
+									<listOptionValue builtIn="false" value="../FileX/Target"/>
+									<listOptionValue builtIn="false" value="../LevelX/Target"/>
+									<listOptionValue builtIn="false" value="../USBX/App"/>
+									<listOptionValue builtIn="false" value="../USBX/Target"/>
+									<listOptionValue builtIn="false" value="../Middlewares/ST/filex/ports/generic/inc/"/>
+									<listOptionValue builtIn="false" value="../Middlewares/ST/usbx/common/usbx_device_classes/inc/"/>
+									<listOptionValue builtIn="false" value="../Middlewares/ST/usbx/ports/generic/inc/"/>
+									<listOptionValue builtIn="false" value="../Middlewares/ST/usbx/common/usbx_network/inc/"/>
+									<listOptionValue builtIn="false" value="../Middlewares/ST/usbx/common/usbx_stm32_device_controllers/"/>
+									<listOptionValue builtIn="false" value="../Middlewares/ST/levelx/common/inc/"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.962489069" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>
@@ -172,9 +210,14 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="AZURE_RTOS"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="USBX"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="FileX"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Components"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="LevelX"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="ThreadX"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
 					</sourceEntries>
 				</configuration>

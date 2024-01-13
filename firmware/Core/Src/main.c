@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2024 STMicroelectronics.
+  * Copyright (c) 2023 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -17,6 +17,7 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include "app_threadx.h"
 #include "main.h"
 #include "adc.h"
 #include "lptim.h"
@@ -31,7 +32,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "common.hpp"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -52,6 +53,10 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+GpioOut LED1 { LED1_GPIO_Port, LED1_Pin, true };
+GpioOut LED2 { LED2_GPIO_Port, LED2_Pin, true };
+GpioOut LED3 { LED3_GPIO_Port, LED3_Pin, true };
+GpioOut LED4 { LED4_GPIO_Port, LED4_Pin, true };
 
 /* USER CODE END PV */
 
@@ -98,19 +103,22 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_QUADSPI_Init();
   MX_SPI1_Init();
   MX_TIM1_Init();
   MX_USB_PCD_Init();
   MX_LPTIM1_Init();
   MX_ADC1_Init();
   MX_LPTIM2_Init();
+  MX_QUADSPI_Init();
   MX_LPUART1_UART_Init();
   MX_RF_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
 
+  MX_ThreadX_Init();
+
+  /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)

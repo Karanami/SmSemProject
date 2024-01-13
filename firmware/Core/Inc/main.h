@@ -29,6 +29,7 @@ extern "C" {
 /* Includes ------------------------------------------------------------------*/
 #include "stm32wbxx_hal.h"
 
+#include "stm32wbxx_ll_tim.h"
 #include "stm32wbxx_ll_system.h"
 #include "stm32wbxx_ll_gpio.h"
 #include "stm32wbxx_ll_exti.h"
