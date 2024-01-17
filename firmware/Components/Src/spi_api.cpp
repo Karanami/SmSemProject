@@ -5,11 +5,11 @@
  *      Author: Piotr Lesicki
  */
 
+#include <queue_peek.h>
 #include "spi_api.hpp"
 
 #include "tx_api.h"
 #include "spi.h"
-
 #include <cstring>
 
 //	┏┓  •┳┓     ┳┓          ┓┏     ┓┓
@@ -24,19 +24,19 @@ class SpiDmaRequestHandler
 		SpiDmaRequestHandler(const SpiDmaRequestHandler&) = delete;
 		SpiDmaRequestHandler& operator=(SpiDmaRequestHandler const&) = delete;
 
-		static void putRequest(SpiDmaRequest &request)
+		constexpr static void putRequest(SpiDmaRequest &request)
 		{
 			tx_queue_send(&SpiDmaRequestHandler::queue, &request, TX_NO_WAIT);
 		}
-		static void peakRequest(SpiDmaRequest &request)
+		constexpr static void peekRequest(SpiDmaRequest &request)
 		{
-
+			queue_peek(&SpiDmaRequestHandler::queue, &request, TX_NO_WAIT);
 		}
-		static void getRequest(SpiDmaRequest &request)
+		constexpr static void getRequest(SpiDmaRequest &request)
 		{
 			tx_queue_receive(&SpiDmaRequestHandler::queue, &request, TX_NO_WAIT);
 		}
-		static uint32_t requestCount()
+		constexpr static uint32_t requestCount()
 		{
 			return SpiDmaRequestHandler::queue.tx_queue_enqueued;
 		}
@@ -75,10 +75,10 @@ void SpiDmaRequest::send()
 void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi)
 {
 	SpiDmaRequest request_buff { nullptr, nullptr, 0, nullptr, nullptr };
-	SpiDmaRequestHandler::getRequest(request_buff);
+	SpiDmaRequestHandler::peekRequest(request_buff);
 	request_buff.cs->off();
 	request_buff.pending_request->store(false);
-	if(SpiDmaRequestHandler::requestCount() > 0)
+	if(SpiDmaRequestHandler::requestCount() != TX_NO_MESSAGES)
 	{
 		SpiDmaRequestHandler::getRequest(request_buff);
 		request_buff.cs->on();
