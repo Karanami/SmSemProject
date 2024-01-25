@@ -40,7 +40,6 @@
         * EXTI
         * Free pins are configured automatically as Analog (this feature is enabled through
         * the Code Generation settings)
-     PB14   ------> I2C3_SDA
 */
 void MX_GPIO_Init(void)
 {
@@ -125,18 +124,10 @@ void MX_GPIO_Init(void)
   LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /**/
-  GPIO_InitStruct.Pin = LL_GPIO_PIN_12|LL_GPIO_PIN_13|LL_GPIO_PIN_15|LL_GPIO_PIN_6;
+  GPIO_InitStruct.Pin = LL_GPIO_PIN_12|LL_GPIO_PIN_13|LL_GPIO_PIN_14|LL_GPIO_PIN_15
+                          |LL_GPIO_PIN_6;
   GPIO_InitStruct.Mode = LL_GPIO_MODE_ANALOG;
   GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
-  LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-  /**/
-  GPIO_InitStruct.Pin = LL_GPIO_PIN_14;
-  GPIO_InitStruct.Mode = LL_GPIO_MODE_ALTERNATE;
-  GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
-  GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_OPENDRAIN;
-  GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
-  GPIO_InitStruct.Alternate = LL_GPIO_AF_4;
   LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /**/
@@ -198,10 +189,10 @@ void MX_GPIO_Init(void)
   LL_EXTI_Init(&EXTI_InitStruct);
 
   /**/
-  LL_GPIO_SetPinPull(IMU_INT1_GPIO_Port, IMU_INT1_Pin, LL_GPIO_PULL_NO);
+  LL_GPIO_SetPinPull(SPI_IMU_INT1_GPIO_Port, SPI_IMU_INT1_Pin, LL_GPIO_PULL_NO);
 
   /**/
-  LL_GPIO_SetPinPull(IMU_INT2_GPIO_Port, IMU_INT2_Pin, LL_GPIO_PULL_NO);
+  LL_GPIO_SetPinPull(SPI_IMU_INT2_GPIO_Port, SPI_IMU_INT2_Pin, LL_GPIO_PULL_NO);
 
   /**/
   LL_GPIO_SetPinPull(SPI_EX_INT1_GPIO_Port, SPI_EX_INT1_Pin, LL_GPIO_PULL_NO);
@@ -210,10 +201,10 @@ void MX_GPIO_Init(void)
   LL_GPIO_SetPinPull(SPI_EX_INT2_GPIO_Port, SPI_EX_INT2_Pin, LL_GPIO_PULL_NO);
 
   /**/
-  LL_GPIO_SetPinMode(IMU_INT1_GPIO_Port, IMU_INT1_Pin, LL_GPIO_MODE_INPUT);
+  LL_GPIO_SetPinMode(SPI_IMU_INT1_GPIO_Port, SPI_IMU_INT1_Pin, LL_GPIO_MODE_INPUT);
 
   /**/
-  LL_GPIO_SetPinMode(IMU_INT2_GPIO_Port, IMU_INT2_Pin, LL_GPIO_MODE_INPUT);
+  LL_GPIO_SetPinMode(SPI_IMU_INT2_GPIO_Port, SPI_IMU_INT2_Pin, LL_GPIO_MODE_INPUT);
 
   /**/
   LL_GPIO_SetPinMode(SPI_EX_INT1_GPIO_Port, SPI_EX_INT1_Pin, LL_GPIO_MODE_INPUT);

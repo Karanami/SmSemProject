@@ -1,7 +1,4 @@
-Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/app_threadx.h \
- ../Middlewares/ST/threadx/common/inc/tx_api.h \
- ../Middlewares/ST/threadx/ports/cortex_m4/gnu/inc/tx_port.h \
- ../Core/Inc/tx_user.h ../Core/Inc/main.h \
+Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h \
  ../Core/Inc/stm32wbxx_hal_conf.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h \
@@ -41,6 +38,8 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/app_threadx.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rcc_ex.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_crs.h \
+ ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rtc.h \
+ ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rtc_ex.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_spi.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_spi_ex.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_tim.h \
@@ -48,7 +47,6 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/app_threadx.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart_ex.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_system.h \
- ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_tim.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_system.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_gpio.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h \
@@ -57,15 +55,27 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/app_threadx.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_utils.h \
  ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h \
- ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_dma.h ../Core/Inc/adc.h \
- ../Core/Inc/main.h ../Core/Inc/dma.h ../Core/Inc/lptim.h \
- ../Core/Inc/usart.h ../Core/Inc/memorymap.h ../Core/Inc/quadspi.h \
- ../Core/Inc/rf.h ../Core/Inc/spi.h ../Core/Inc/tim.h ../Core/Inc/usb.h \
- ../Core/Inc/gpio.h ../Components/Inc/common.hpp
-../Core/Inc/app_threadx.h:
-../Middlewares/ST/threadx/common/inc/tx_api.h:
-../Middlewares/ST/threadx/ports/cortex_m4/gnu/inc/tx_port.h:
-../Core/Inc/tx_user.h:
+ ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_dma.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
+ ../Core/Inc/FreeRTOSConfig.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
+ ../Core/Inc/adc.h ../Core/Inc/main.h ../Core/Inc/dma.h \
+ ../Core/Inc/lptim.h ../Core/Inc/usart.h ../Core/Inc/memorymap.h \
+ ../Core/Inc/quadspi.h ../Core/Inc/rf.h ../Core/Inc/rtc.h \
+ ../Core/Inc/spi.h ../Core/Inc/tim.h ../Core/Inc/usb.h ../Core/Inc/gpio.h \
+ ../Core/Inc/app_freertos.h ../Core/Inc/common.hpp ../Core/Inc/gpio.h \
+ ../Core/Inc/lptim.h ../Core/Inc/tim.h ../Core/Inc/max11643.hpp \
+ ../Core/Inc/spi.h ../Core/Inc/common.hpp ../Core/Inc/lsm6dsl.hpp \
+ ../Core/Inc/extern_vars.hpp ../Core/Inc/max11643.hpp \
+ ../Core/Inc/lsm6dsl.hpp
 ../Core/Inc/main.h:
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:
 ../Core/Inc/stm32wbxx_hal_conf.h:
@@ -106,6 +116,8 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/app_threadx.h \
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h:
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rcc_ex.h:
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_crs.h:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rtc.h:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rtc_ex.h:
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_spi.h:
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_spi_ex.h:
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_tim.h:
@@ -113,7 +125,6 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/app_threadx.h \
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart.h:
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart_ex.h:
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_system.h:
-../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_tim.h:
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_system.h:
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_gpio.h:
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h:
@@ -123,6 +134,17 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/app_threadx.h \
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_utils.h:
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h:
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_dma.h:
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
+../Core/Inc/FreeRTOSConfig.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
+../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
 ../Core/Inc/adc.h:
 ../Core/Inc/main.h:
 ../Core/Inc/dma.h:
@@ -131,8 +153,20 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/app_threadx.h \
 ../Core/Inc/memorymap.h:
 ../Core/Inc/quadspi.h:
 ../Core/Inc/rf.h:
+../Core/Inc/rtc.h:
 ../Core/Inc/spi.h:
 ../Core/Inc/tim.h:
 ../Core/Inc/usb.h:
 ../Core/Inc/gpio.h:
-../Components/Inc/common.hpp:
+../Core/Inc/app_freertos.h:
+../Core/Inc/common.hpp:
+../Core/Inc/gpio.h:
+../Core/Inc/lptim.h:
+../Core/Inc/tim.h:
+../Core/Inc/max11643.hpp:
+../Core/Inc/spi.h:
+../Core/Inc/common.hpp:
+../Core/Inc/lsm6dsl.hpp:
+../Core/Inc/extern_vars.hpp:
+../Core/Inc/max11643.hpp:
+../Core/Inc/lsm6dsl.hpp:

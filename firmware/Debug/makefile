@@ -9,31 +9,14 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include USBX/App/subdir.mk
--include NetXDuo/Target/subdir.mk
--include NetXDuo/App/subdir.mk
--include Middlewares/ST/usbx/common/usbx_stm32_device_controllers/subdir.mk
--include Middlewares/ST/usbx/common/usbx_network/src/subdir.mk
--include Middlewares/ST/usbx/common/usbx_device_classes/src/subdir.mk
--include Middlewares/ST/usbx/common/core/src/subdir.mk
--include Middlewares/ST/threadx/utility/low_power/subdir.mk
--include Middlewares/ST/threadx/ports/cortex_m4/gnu/src/subdir.mk
--include Middlewares/ST/threadx/common/src/subdir.mk
--include Middlewares/ST/netxduo/crypto_libraries/src/subdir.mk
--include Middlewares/ST/netxduo/common/src/subdir.mk
--include Middlewares/ST/levelx/common/src/subdir.mk
--include Middlewares/ST/levelx/common/drivers/subdir.mk
--include Middlewares/ST/filex/common/src/subdir.mk
--include Middlewares/ST/filex/common/drivers/subdir.mk
--include LevelX/Target/subdir.mk
--include FileX/Target/subdir.mk
--include FileX/App/subdir.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/subdir.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/subdir.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/subdir.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/subdir.mk
 -include Drivers/STM32WBxx_HAL_Driver/Src/subdir.mk
 -include Core/ThreadSafe/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
--include Components/Src/subdir.mk
--include AZURE_RTOS/App/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -106,8 +89,8 @@ all: main-build
 main-build: SmSemProject.elf secondary-outputs
 
 # Tool invocations
-SmSemProject.elf SmSemProject.map: $(OBJS) $(USER_OBJS) C:\Users\HP\Desktop\studia\sm\SmSemProject\firmware\STM32WB55RGVX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "SmSemProject.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\HP\Desktop\studia\sm\SmSemProject\firmware\STM32WB55RGVX_FLASH.ld" -Wl,-Map="SmSemProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+SmSemProject.elf SmSemProject.map: $(OBJS) $(USER_OBJS) C:\Users\user\Desktop\szkola\Uni\sm\SmSemProject\firmware\STM32WB55RGVX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "SmSemProject.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\user\Desktop\szkola\Uni\sm\SmSemProject\firmware\STM32WB55RGVX_FLASH.ld" -Wl,-Map="SmSemProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

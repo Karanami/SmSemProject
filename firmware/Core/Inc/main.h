@@ -29,7 +29,6 @@ extern "C" {
 /* Includes ------------------------------------------------------------------*/
 #include "stm32wbxx_hal.h"
 
-#include "stm32wbxx_ll_tim.h"
 #include "stm32wbxx_ll_system.h"
 #include "stm32wbxx_ll_gpio.h"
 #include "stm32wbxx_ll_exti.h"
@@ -42,7 +41,6 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -76,8 +74,8 @@ void Error_Handler(void);
 #define M_LEFT_A_GPIO_Port GPIOC
 #define VBAT_Pin LL_GPIO_PIN_2
 #define VBAT_GPIO_Port GPIOC
-#define IMU_INT1_Pin LL_GPIO_PIN_3
-#define IMU_INT1_GPIO_Port GPIOC
+#define SPI_IMU_INT1_Pin LL_GPIO_PIN_3
+#define SPI_IMU_INT1_GPIO_Port GPIOC
 #define LED1_Pin LL_GPIO_PIN_0
 #define LED1_GPIO_Port GPIOA
 #define LED2_Pin LL_GPIO_PIN_1
@@ -106,8 +104,8 @@ void Error_Handler(void);
 #define NM_SLEEP_GPIO_Port GPIOB
 #define M_RIGHT_A_Pin LL_GPIO_PIN_1
 #define M_RIGHT_A_GPIO_Port GPIOB
-#define IMU_INT2_Pin LL_GPIO_PIN_4
-#define IMU_INT2_GPIO_Port GPIOE
+#define SPI_IMU_INT2_Pin LL_GPIO_PIN_4
+#define SPI_IMU_INT2_GPIO_Port GPIOE
 #define M_RIGHT_DIRECTION_Pin LL_GPIO_PIN_6
 #define M_RIGHT_DIRECTION_GPIO_Port GPIOC
 #define M_RIGHT_PWM_Pin LL_GPIO_PIN_10

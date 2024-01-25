@@ -3,4 +3,4 @@
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_gpio.h:281:22:LL_GPIO_SetPinMode	3
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_gpio.h:492:22:LL_GPIO_SetPinPull	3
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_gpio.h:919:22:LL_GPIO_ResetOutputPin	1
-../Core/Src/gpio.c:45:6:MX_GPIO_Init	1
+../Core/Src/gpio.c:44:6:MX_GPIO_Init	1

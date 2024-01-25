@@ -38,29 +38,12 @@ CPP_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-AZURE_RTOS/App \
-Components/Src \
 Core/Src \
 Core/Startup \
 Core/ThreadSafe \
 Drivers/STM32WBxx_HAL_Driver/Src \
-FileX/App \
-FileX/Target \
-LevelX/Target \
-Middlewares/ST/filex/common/drivers \
-Middlewares/ST/filex/common/src \
-Middlewares/ST/levelx/common/drivers \
-Middlewares/ST/levelx/common/src \
-Middlewares/ST/netxduo/common/src \
-Middlewares/ST/netxduo/crypto_libraries/src \
-Middlewares/ST/threadx/common/src \
-Middlewares/ST/threadx/ports/cortex_m4/gnu/src \
-Middlewares/ST/threadx/utility/low_power \
-Middlewares/ST/usbx/common/core/src \
-Middlewares/ST/usbx/common/usbx_device_classes/src \
-Middlewares/ST/usbx/common/usbx_network/src \
-Middlewares/ST/usbx/common/usbx_stm32_device_controllers \
-NetXDuo/App \
-NetXDuo/Target \
-USBX/App \
+Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 \
+Middlewares/Third_Party/FreeRTOS/Source \
+Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F \
+Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang \
 

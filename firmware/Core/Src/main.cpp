@@ -17,8 +17,8 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include "app_threadx.h"
 #include "main.h"
+#include "cmsis_os.h"
 #include "adc.h"
 #include "dma.h"
 #include "lptim.h"
@@ -26,6 +26,7 @@
 #include "memorymap.h"
 #include "quadspi.h"
 #include "rf.h"
+#include "rtc.h"
 #include "spi.h"
 #include "tim.h"
 #include "usb.h"
@@ -33,7 +34,13 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+//#include "FreeRTOS.h"
+#include <FreeRTOS.h>
+#include <app_freertos.h>
 #include "common.hpp"
+#include "max11643.hpp"
+#include "lsm6dsl.hpp"
+#include "extern_vars.hpp"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -54,15 +61,47 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-GpioOut LED1 { LED1_GPIO_Port, LED1_Pin, true };
-GpioOut LED2 { LED2_GPIO_Port, LED2_Pin, true };
-GpioOut LED3 { LED3_GPIO_Port, LED3_Pin, true };
-GpioOut LED4 { LED4_GPIO_Port, LED4_Pin, true };
+
+GpioOut led1 = GPIO_OUT(LED1, true);
+GpioOut led2 = GPIO_OUT(LED2, true);
+GpioOut led3 = GPIO_OUT(LED3, true);
+GpioOut led4 = GPIO_OUT(LED4, true);
+
+GpioOut nm_sleep 			= GPIO_OUT(NM_SLEEP, true);
+GpioOut m_right_direction 	= GPIO_OUT(M_RIGHT_DIRECTION, true);
+GpioOut m_left_direction 	= GPIO_OUT(M_LEFT_DIRECTION, true);
+
+GpioOut spi_imu_ncs		= GPIO_OUT(SPI_IMU_NCS, true);
+GpioIn spi_imu_int1 	= GPIO_IN(SPI_IMU_INT1, true);
+GpioIn spi_imu_int2 	= GPIO_IN(SPI_IMU_INT2, true);
+
+GpioOut spi_ex_ncs1 = GPIO_OUT(SPI_EX_NCS1, true);
+GpioOut spi_ex_ncs2 = GPIO_OUT(SPI_EX_NCS2, true);
+GpioIn spi_ex_int1 	= GPIO_IN(SPI_EX_INT1, true);
+GpioIn spi_ex_int2 	= GPIO_IN(SPI_EX_INT2, true);
+
+constexpr float encoder_ratio = 1.f / 6.f;
+Encoder left_encoder(&hlptim1, encoder_ratio);
+Encoder right_encoder(&hlptim2, encoder_ratio);
+
+PwmOut left_speed_ctrl(&htim1, PwmOutCh::_1);
+PwmOut right_speed_ctrl(&htim1, PwmOutCh::_3);
+
+Max11643 front_adc(&hspi1, &spi_ex_ncs1, &spi_ex_int1);
+
+Lsm6dsl imu(&hspi1, &spi_imu_ncs, &spi_imu_int1, &spi_imu_int2);
+
+float anglspd1;
+float anglspd2;
+
+LPTIM_TypeDef *lptim1 = LPTIM1;
+LPTIM_TypeDef *lptim2 = LPTIM2;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 void PeriphCommonClock_Config(void);
+void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -112,12 +151,31 @@ int main(void)
   MX_QUADSPI_Init();
   MX_SPI1_Init();
   MX_LPUART1_UART_Init();
+  MX_RTC_Init();
   MX_RF_Init();
   /* USER CODE BEGIN 2 */
+//  front_adc.init();
+  right_speed_ctrl.init();
+  left_speed_ctrl.init();
+  nm_sleep.off();
+  led1.off();
+  led2.off();
+  led3.off();
+  led4.off();
 
+//  while(hspi1.State != HAL_SPI_STATE_READY);
+
+  //HAL_NVIC_SetPriorityGrouping( NVIC_PRIORITYGROUP_4 );
   /* USER CODE END 2 */
 
-  MX_ThreadX_Init();
+  /* Init scheduler */
+  osKernelInitialize();
+
+  /* Call init function for freertos objects (in freertos.c) */
+  MX_FREERTOS_Init();
+
+  /* Start scheduler */
+  osKernelStart();
 
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
@@ -147,14 +205,21 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSI1
+                              |RCC_OSCILLATORTYPE_HSE|RCC_OSCILLATORTYPE_LSE
+                              |RCC_OSCILLATORTYPE_MSI;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.LSEState = RCC_LSE_OFF;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.MSIState = RCC_MSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.MSICalibrationValue = RCC_MSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.MSIClockRange = RCC_MSIRANGE_6;
+  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PLLM = RCC_PLLM_DIV2;
-  RCC_OscInitStruct.PLL.PLLN = 8;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_MSI;
+  RCC_OscInitStruct.PLL.PLLM = RCC_PLLM_DIV1;
+  RCC_OscInitStruct.PLL.PLLN = 32;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = RCC_PLLQ_DIV2;
@@ -179,6 +244,10 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+
+  /** Enable MSI Auto calibration
+  */
+  HAL_RCCEx_EnableMSIPLLMode();
 }
 
 /**
@@ -193,7 +262,7 @@ void PeriphCommonClock_Config(void)
   */
   PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_SMPS|RCC_PERIPHCLK_RFWAKEUP
                               |RCC_PERIPHCLK_USB|RCC_PERIPHCLK_ADC;
-  PeriphClkInitStruct.PLLSAI1.PLLN = 6;
+  PeriphClkInitStruct.PLLSAI1.PLLN = 24;
   PeriphClkInitStruct.PLLSAI1.PLLP = RCC_PLLP_DIV2;
   PeriphClkInitStruct.PLLSAI1.PLLQ = RCC_PLLQ_DIV2;
   PeriphClkInitStruct.PLLSAI1.PLLR = RCC_PLLR_DIV2;
