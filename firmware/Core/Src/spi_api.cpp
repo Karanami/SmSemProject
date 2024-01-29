@@ -58,7 +58,7 @@ class SpiDmaRequestHandler
 //	┗┛┣┛┗┻┛┛┗┗┗┻┛┗┗ ┗┫┗┻┗ ┛┗
 //	  ┛              ┗
 
-SpiDmaRequest::SpiDmaRequest(uint8_t *tx_data, uint8_t *rx_data, size_t size, GpioOut *cs, std::atomic<bool> *pending_request) : rx_data(rx_data), tx_data(tx_data), size(size), cs(cs), pending_request(pending_request) { }
+SpiDmaRequest::SpiDmaRequest(uint8_t *tx_data, uint8_t *rx_data, size_t size, GpioOut *cs, std::atomic<bool> *pending_request) : tx_data(tx_data), rx_data(rx_data), size(size), cs(cs), pending_request(pending_request) { }
 
 void SpiDmaRequest::send()
 {

@@ -2,5 +2,6 @@
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_system.h:804:22:LL_SYSCFG_SetEXTISource	32	static,ignoring_inline_asm
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_gpio.h:281:22:LL_GPIO_SetPinMode	48	static,ignoring_inline_asm
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_gpio.h:492:22:LL_GPIO_SetPinPull	48	static,ignoring_inline_asm
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_gpio.h:890:22:LL_GPIO_SetOutputPin	16	static
 ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_gpio.h:919:22:LL_GPIO_ResetOutputPin	16	static
 ../Core/Src/gpio.c:44:6:MX_GPIO_Init	48	static

@@ -1,9 +1,14 @@
-/*
- * extern_vars.hpp
- *
- *  Created on: Jan 24, 2024
- *      Author: user
- */
+/**
+  ******************************************************************************
+  * @file           : extern_vars.hpp
+  * @brief          : globally used variables
+  ******************************************************************************
+  * @attention
+  *
+  *	file is protected from only C usage
+  *
+  ******************************************************************************
+  */
 
 #ifndef INC_EXTERN_VARS_HPP_
 #define INC_EXTERN_VARS_HPP_
@@ -12,6 +17,7 @@
 #include "common.hpp"
 #include "max11643.hpp"
 #include "lsm6dsl.hpp"
+#include "arm_math.h"
 
 #ifdef __cplusplus
 
@@ -44,9 +50,17 @@ extern Max11643 front_adc;
 
 extern Lsm6dsl imu;
 
+#endif
+
 extern float anglspd1;
 extern float anglspd2;
 
-#endif
+extern uint32_t dsp_timer_period;
+
+extern float speed;
+extern float set_speed;
+extern float follow_deviation;
+
+extern char cmd[8];
 
 #endif /* INC_EXTERN_VARS_HPP_ */

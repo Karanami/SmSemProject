@@ -8,7 +8,9 @@
 
 #include <lsm6dsl.hpp>
 
-Lsm6dsl::Lsm6dsl(SPI_HandleTypeDef *hspi, GpioOut *ncs, GpioIn *it1, GpioIn *it2) : hspi(hspi), ncs(ncs), it1(it1), it2(it2)
+Lsm6dsl::Lsm6dsl(SPI_HandleTypeDef *hspi, GpioOut *ncs, GpioIn *it1, GpioIn *it2) : hspi(hspi), ncs(ncs), it1(it1), it2(it2) { }
+
+void Lsm6dsl::init()
 {
-	ncs->off();
+	return;
 }

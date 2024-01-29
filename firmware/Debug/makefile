@@ -9,10 +9,19 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include Utilities/lpm/tiny_lpm/subdir.mk
+-include STM32_WPAN/Target/subdir.mk
+-include STM32_WPAN/App/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/subdir.mk
+-include Middlewares/ST/STM32_WPAN/utilities/subdir.mk
+-include Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/subdir.mk
+-include Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/subdir.mk
+-include Middlewares/ST/STM32_WPAN/ble/svc/Src/subdir.mk
+-include Middlewares/ST/STM32_WPAN/ble/core/template/subdir.mk
+-include Middlewares/ST/STM32_WPAN/ble/core/auto/subdir.mk
 -include Drivers/STM32WBxx_HAL_Driver/Src/subdir.mk
 -include Core/ThreadSafe/subdir.mk
 -include Core/Startup/subdir.mk
@@ -89,8 +98,8 @@ all: main-build
 main-build: SmSemProject.elf secondary-outputs
 
 # Tool invocations
-SmSemProject.elf SmSemProject.map: $(OBJS) $(USER_OBJS) C:\Users\user\Desktop\szkola\Uni\sm\SmSemProject\firmware\STM32WB55RGVX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "SmSemProject.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\user\Desktop\szkola\Uni\sm\SmSemProject\firmware\STM32WB55RGVX_FLASH.ld" -Wl,-Map="SmSemProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+SmSemProject.elf SmSemProject.map: $(OBJS) $(USER_OBJS) C:\Users\lenovo\Desktop\Uni-main\sm\SmSemProject\firmware\STM32WB55RGVX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "SmSemProject.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\lenovo\Desktop\Uni-main\sm\SmSemProject\firmware\STM32WB55RGVX_FLASH.ld" -Wl,-Map="SmSemProject.map" -Wl,--gc-sections -static -L../Middlewares/Third_Party/ARM_CMSIS/CMSIS/DSP/Lib/GCC --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -29,6 +29,10 @@ extern "C" {
 /* Includes ------------------------------------------------------------------*/
 #include "stm32wbxx_hal.h"
 
+#include "app_conf.h"
+#include "app_entry.h"
+#include "app_common.h"
+
 #include "stm32wbxx_ll_system.h"
 #include "stm32wbxx_ll_gpio.h"
 #include "stm32wbxx_ll_exti.h"
@@ -70,8 +74,8 @@ void Error_Handler(void);
 #define QSPI_IO1_GPIO_Port GPIOB
 #define QSPI_IO0_Pin LL_GPIO_PIN_9
 #define QSPI_IO0_GPIO_Port GPIOB
-#define M_LEFT_A_Pin LL_GPIO_PIN_0
-#define M_LEFT_A_GPIO_Port GPIOC
+#define M_LEFT_PWM_Pin LL_GPIO_PIN_0
+#define M_LEFT_PWM_GPIO_Port GPIOC
 #define VBAT_Pin LL_GPIO_PIN_2
 #define VBAT_GPIO_Port GPIOC
 #define SPI_IMU_INT1_Pin LL_GPIO_PIN_3
@@ -88,8 +92,8 @@ void Error_Handler(void);
 #define QSPI_IO3_GPIO_Port GPIOA
 #define QSPI_IO2_Pin LL_GPIO_PIN_7
 #define QSPI_IO2_GPIO_Port GPIOA
-#define M_LEFT_PWM_Pin LL_GPIO_PIN_8
-#define M_LEFT_PWM_GPIO_Port GPIOA
+#define M_LEFT_PWMA8_Pin LL_GPIO_PIN_8
+#define M_LEFT_PWMA8_GPIO_Port GPIOA
 #define M_LEFT_DIRECTION_Pin LL_GPIO_PIN_9
 #define M_LEFT_DIRECTION_GPIO_Port GPIOA
 #define LED3_Pin LL_GPIO_PIN_5

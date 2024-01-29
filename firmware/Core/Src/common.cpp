@@ -1,11 +1,9 @@
-/*
- * common.cpp
- *
- *  Created on: Jan 12, 2024
- *      Author: Piotr Lesicki
- */
-
-
+/**
+  ******************************************************************************
+  * @file           : common.cpp
+  * @brief          : wrappers for basic control of the build in peripherals
+  ******************************************************************************
+  */
 #include "common.hpp"
 #include <algorithm>
 #include <stm32wbxx_ll_lptim.h>
@@ -53,24 +51,21 @@ void GpioOut::toggle()
 //	┗┛┛┗┗┗┛┗┻┗ ┛
 //
 
-Encoder::Encoder(LPTIM_HandleTypeDef *hlptim, float ratio) : hlptim(hlptim), ratio(ratio)
-{
-	LL_LPTIM_EnableResetAfterRead(hlptim->Instance);
-}
+Encoder::Encoder(LPTIM_HandleTypeDef *hlptim, float ratio) : hlptim(hlptim), ratio(ratio) { }
 
-Encoder::Encoder(LPTIM_HandleTypeDef *hlptim, float gear_ratio, float encoder_ratio) : hlptim(hlptim), ratio(gear_ratio * encoder_ratio)
-{
-	LL_LPTIM_EnableResetAfterRead(hlptim->Instance);
-}
+//Encoder::Encoder(LPTIM_HandleTypeDef *hlptim, float gear_ratio, float encoder_ratio) : hlptim(hlptim), ratio(gear_ratio * encoder_ratio) { }
 
 void Encoder::init()
 {
 	HAL_LPTIM_Counter_Start(hlptim, 0xffff);
+	LL_LPTIM_EnableResetAfterRead(hlptim->Instance);
+	LL_LPTIM_Enable(hlptim->Instance);
+	LL_LPTIM_StartCounter(hlptim->Instance, LL_LPTIM_OPERATING_MODE_CONTINUOUS);
 }
 
 float Encoder::getAngleSpeed(float dt)
 {
-	return float(HAL_LPTIM_ReadCounter(hlptim)) * 2.f * 3.1415927f * ratio / dt;
+	return float(HAL_LPTIM_ReadCounter(hlptim)) * ratio / dt * 60.f;
 }
 
 //	┏┓      ┏┓
@@ -78,7 +73,7 @@ float Encoder::getAngleSpeed(float dt)
 //	┣┛┗┻┛┛┗┗┗┛┗┻┗
 //
 
-PwmOut::PwmOut(TIM_HandleTypeDef *tim, PwmOutCh channel) : tim(tim)
+PwmOut::PwmOut(TIM_HandleTypeDef *tim, PwmOutCh channel) : htim(tim)
 {
 	switch (channel)
 	{
@@ -102,17 +97,17 @@ PwmOut::PwmOut(TIM_HandleTypeDef *tim, PwmOutCh channel) : tim(tim)
 		break;
 	}
 	this->channel = uint32_t(channel);
-	arr = 1000;
+	arr = 10000.f;
 	//HAL_TIM_PWM_Start(tim, uint32_t(channel));
 }
 
 void PwmOut::init()
 {
-	HAL_TIM_PWM_Start(tim, uint32_t(channel));
+	HAL_TIM_PWM_Start(htim, uint32_t(channel));
 }
 void PwmOut::setDuty(float duty)
 {
 	duty = std::clamp(duty, 0.f, 100.f);
 	uint32_t cmp = uint32_t(arr * duty * 0.01);
-	tim->Instance->*channel_cmp_reg = cmp;
+	htim->Instance->*channel_cmp_reg = cmp;
 }

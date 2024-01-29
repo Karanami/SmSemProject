@@ -59,10 +59,16 @@ void MX_GPIO_Init(void)
   LL_GPIO_ResetOutputPin(GPIOA, LED1_Pin|LED2_Pin|M_LEFT_DIRECTION_Pin);
 
   /**/
-  LL_GPIO_ResetOutputPin(GPIOC, LED3_Pin|M_RIGHT_DIRECTION_Pin|SPI_EX_NCS1_Pin|SPI_EX_NCS2_Pin);
+  LL_GPIO_ResetOutputPin(GPIOC, LED3_Pin|M_RIGHT_DIRECTION_Pin);
 
   /**/
-  LL_GPIO_ResetOutputPin(GPIOB, LED4_Pin|NM_SLEEP_Pin|SPI_IMU_NCS_Pin);
+  LL_GPIO_ResetOutputPin(GPIOB, LED4_Pin|NM_SLEEP_Pin);
+
+  /**/
+  LL_GPIO_SetOutputPin(GPIOC, SPI_EX_NCS1_Pin|SPI_EX_NCS2_Pin);
+
+  /**/
+  LL_GPIO_SetOutputPin(SPI_IMU_NCS_GPIO_Port, SPI_IMU_NCS_Pin);
 
   /**/
   GPIO_InitStruct.Pin = LL_GPIO_PIN_13|LL_GPIO_PIN_14|LL_GPIO_PIN_15|LL_GPIO_PIN_1

@@ -26,10 +26,14 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "app_freertos.h"
+#include "timers.h"
+// intentional - will only look at c compatible vars
+#include "extern_vars.hpp"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 typedef StaticTask_t osStaticThreadDef_t;
+typedef StaticTimer_t osStaticTimerDef_t;
 /* USER CODE BEGIN PTD */
 
 /* USER CODE END PTD */
@@ -60,6 +64,14 @@ const osThreadAttr_t mainTask_attributes = {
   .cb_size = sizeof(mainTaskControlBlock),
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for dspTimer */
+osTimerId_t dspTimerHandle;
+osStaticTimerDef_t dspTimerControlBlock;
+const osTimerAttr_t dspTimer_attributes = {
+  .name = "dspTimer",
+  .cb_mem = &dspTimerControlBlock,
+  .cb_size = sizeof(dspTimerControlBlock),
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -67,6 +79,7 @@ const osThreadAttr_t mainTask_attributes = {
 /* USER CODE END FunctionPrototypes */
 
 void mainTaskEntry(void *argument);
+extern void dspTimerCallback(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -88,8 +101,16 @@ void MX_FREERTOS_Init(void) {
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
 
+  /* Create the timer(s) */
+  /* creation of dspTimer */
+  dspTimerHandle = osTimerNew(dspTimerCallback, osTimerPeriodic, NULL, &dspTimer_attributes);
+
   /* USER CODE BEGIN RTOS_TIMERS */
-  /* start timers, add new ones, ... */
+  //xTimerStop(dspTimerHandle, 10);
+  /* dspTimer change period to 100ms (block is ignored but set 10
+   * either way */
+  xTimerChangePeriod(dspTimerHandle, dsp_timer_period, 10);
+
   /* USER CODE END RTOS_TIMERS */
 
   /* USER CODE BEGIN RTOS_QUEUES */

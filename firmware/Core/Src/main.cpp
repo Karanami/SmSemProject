@@ -21,6 +21,7 @@
 #include "cmsis_os.h"
 #include "adc.h"
 #include "dma.h"
+#include "ipcc.h"
 #include "lptim.h"
 #include "usart.h"
 #include "memorymap.h"
@@ -78,9 +79,9 @@ GpioIn spi_imu_int2 	= GPIO_IN(SPI_IMU_INT2, true);
 GpioOut spi_ex_ncs1 = GPIO_OUT(SPI_EX_NCS1, true);
 GpioOut spi_ex_ncs2 = GPIO_OUT(SPI_EX_NCS2, true);
 GpioIn spi_ex_int1 	= GPIO_IN(SPI_EX_INT1, true);
-GpioIn spi_ex_int2 	= GPIO_IN(SPI_EX_INT2, true);
+//GpioIn spi_ex_int2 	= GPIO_IN(SPI_EX_INT2, true);
 
-constexpr float encoder_ratio = 1.f / 6.f;
+constexpr float encoder_ratio = 1.f / 6.f / 10.f;
 Encoder left_encoder(&hlptim1, encoder_ratio);
 Encoder right_encoder(&hlptim2, encoder_ratio);
 
@@ -94,8 +95,6 @@ Lsm6dsl imu(&hspi1, &spi_imu_ncs, &spi_imu_int1, &spi_imu_int2);
 float anglspd1;
 float anglspd2;
 
-LPTIM_TypeDef *lptim1 = LPTIM1;
-LPTIM_TypeDef *lptim2 = LPTIM2;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -125,6 +124,8 @@ int main(void)
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
+  /* Config code for STM32_WPAN (HSE Tuning must be done before system clock configuration) */
+  MX_APPE_Config();
 
   /* USER CODE BEGIN Init */
 
@@ -136,6 +137,9 @@ int main(void)
 /* Configure the peripherals common clocks */
   PeriphCommonClock_Config();
 
+  /* IPCC initialisation */
+  MX_IPCC_Init();
+
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
@@ -145,31 +149,21 @@ int main(void)
   MX_DMA_Init();
   MX_TIM1_Init();
   MX_USB_PCD_Init();
-  MX_LPTIM1_Init();
   MX_ADC1_Init();
   MX_LPTIM2_Init();
   MX_QUADSPI_Init();
   MX_SPI1_Init();
   MX_LPUART1_UART_Init();
   MX_RTC_Init();
+  MX_LPTIM1_Init();
   MX_RF_Init();
   /* USER CODE BEGIN 2 */
-//  front_adc.init();
-  right_speed_ctrl.init();
-  left_speed_ctrl.init();
-  nm_sleep.off();
-  led1.off();
-  led2.off();
-  led3.off();
-  led4.off();
-
-//  while(hspi1.State != HAL_SPI_STATE_READY);
-
-  //HAL_NVIC_SetPriorityGrouping( NVIC_PRIORITYGROUP_4 );
   /* USER CODE END 2 */
 
   /* Init scheduler */
   osKernelInitialize();
+  /* Init code for STM32_WPAN */
+  MX_APPE_Init();
 
   /* Call init function for freertos objects (in freertos.c) */
   MX_FREERTOS_Init();
@@ -283,7 +277,13 @@ void PeriphCommonClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_GPIO_EXIT_Callback(uint16_t GPIO_Pin)
+{
+	if(GPIO_Pin == 0)
+	{
+		led2.toggle();
+	}
+}
 /* USER CODE END 4 */
 
 /**
